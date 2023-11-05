@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      canvas {
+        background-color: red;
+        border: solid yellow 3px;
+      }
+    </style>
+
+    <script>
+      window.onload = function () {
+        canvas = document.getElementById("canvas");
+        if (canvas && canvas.getContext) {
+          ctx = canvas.getContext("2d");
+          if (ctx) {
+            alert("canvas tag supported");
+          } else {
+            alert("canvas NOT supported");
+          }
+        }
+      };
+    </script>
+  </head>
+  <body>
+    <canvas id="canvas" width="600" height="400"> </canvas>
+  </body>
+</html>
