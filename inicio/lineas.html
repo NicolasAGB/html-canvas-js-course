@@ -18,21 +18,30 @@
         if (canvas && canvas.getContext) {
           ctx = canvas.getContext("2d");
           if (ctx) {
-            /* alert("canvas tag supported"); */
+            //estilos lineas
+            ctx.lineWidth = 5; //ancho de linea
+            ctx.strokeStyle = "yellow"; //color de linea
 
-            //defino los colores
-            ctx.fillStyle = "yellow";
-            ctx.strokeStyle = "#ff0000";
-            ctx.lineWidt = 5;
+            //inicio el trazo de la linea
+            ctx.beginPath();
+			ctx.lineCap = "round";
+            ctx.moveTo(50, 50);
+            ctx.lineTo(450, 50);
+            ctx.stroke();
 
-            //x,y,w,h
-            ctx.fillRect(50, 50, 100, 100);
-            ctx.strokeRect(50, 50, 100, 1000);
+			ctx.strokeStyle = "orange";
+			ctx.lineCap = "square";
+			ctx.beginPath();
+            ctx.moveTo(50, 100);
+            ctx.lineTo(450, 100);
+            ctx.stroke();
 
-            //cambiar color de relleno
-            ctx.fillStyle = "rgba(250, 250, 0, 0.25)";
-            ctx.fillRect(200, 50, 100, 100);
-            ctx.strokeRect(200, 50, 100, 100);
+			ctx.strokeStyle = "blue";
+			ctx.lineCap = "butt";
+			ctx.beginPath();
+            ctx.moveTo(50, 150);
+            ctx.lineTo(450, 150);
+            ctx.stroke();
           } else {
             alert("canvas NOT supported");
           }
